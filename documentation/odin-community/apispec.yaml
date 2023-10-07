@@ -78,10 +78,12 @@ definitions:
         
   Report:
     properties:
-      kind:
-        type: number
-        format: integer
       cause:
+        type: array
+        items:
+          type: number
+          format: integer
+      kind:
         type: number
         format: integer
       user: 
