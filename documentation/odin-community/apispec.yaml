@@ -1,0 +1,121 @@
+swagger: '2.0'
+info:
+  title: "odin"
+  description: |
+    ## Endpoints
+    ``` bash
+      api gateway
+      https://odincommunity.api.com
+    ```
+    ## Métodos
+    Suportado os seguintes métodos:
+    POST, GET, OPTION, PUT, DELETE
+  version: "1.0.0-alpha"
+host: 'odincommunity.api.com'
+basePath: /
+produces:
+  - application/json
+schemes:
+  - https
+paths:
+  /v1/report:
+    post:
+      produces:
+        - application/json
+      description: | 
+        Rota para abertura de relatos de incêndios
+      parameters: 
+        - in: body
+          name: body
+          description: ""
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Report'
+      responses:
+        '200':
+          description: StatusOK
+          schema:
+            type: object
+            properties:
+              data:
+                $ref: '#/definitions/Sucess'
+        '500':
+          description: StatusInternalServerError
+  /v1/user/{user}/report/:
+    get: 
+      produces:
+        - application/json
+      description: | 
+        Rota para abertura de relatos de incêndios
+      parameters: 
+        - name: "user"
+          in: "path"
+          description: "user uuid"
+          required: true
+          type: string
+      responses:
+        '200':
+          description: StatusOK
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/Report'
+        '500':
+          description: StatusInternalServerError
+          
+          
+definitions:
+  Sucess:
+    properties:
+      status:
+        type: number
+        format: integer
+        
+  Report:
+    properties:
+      kind:
+        type: number
+        format: integer
+      cause:
+        type: number
+        format: integer
+      user: 
+        type: string
+      descreption: 
+        type: string
+      loc:
+        type: object
+        properties: 
+          lat:
+            type: number
+            format: float
+          lng: 
+            type: number
+            format: float
+
+  ReportBack:
+    properties:
+      status:
+        type: string
+      kind:
+        type: string
+      cause:
+        type: string
+      user: 
+        type: string
+      descreption: 
+        type: string
+      loc:
+        type: object
+        properties: 
+          lat:
+            type: number
+            format: float
+          lng: 
+            type: number
+            format: float
