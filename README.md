@@ -5,6 +5,10 @@
 [![badge](https://img.shields.io/badge/chatbot-prototype-red)](https://www.figma.com/proto/VL89dWkK1FKHlTRRFwUwiR/Prot%C3%B3tipo?page-id=0%3A1&type=design&node-id=99-1704&viewport=-2184%2C-33%2C0.44&t=vq7m7UTxUQgQOjnM-1&scaling=min-zoom&starting-point-node-id=99%3A1704&show-proto-sidebar=1&mode=design)
 
 Desafio Escolhido: [Gerenciamento de incêndios: aumentando as oportunidades de gerenciamento de incêndios com base na comunidade](https://github.com/filipecancio/space-apps-challenge/issues/1)
+|Call Fireman|Ask Help|aaa|aaa|
+|--|--|--|--|
+| ![pedir socorrro](https://github.com/filipecancio/space-apps-challenge/assets/13178261/cd98b267-4d07-4801-a162-72533b7f1ed6) | ![pedir socorrro2](https://github.com/filipecancio/space-apps-challenge/assets/13178261/71598093-cd62-4656-a5e2-300e4143e02a) | ![ver relto](https://github.com/filipecancio/space-apps-challenge/assets/13178261/61fb46a2-5ca5-4ecd-8172-984684a134ea) | ![chatbot](https://github.com/filipecancio/space-apps-challenge/assets/13178261/28a9e525-f47c-42bc-95f1-54fc8ef25433) |
+
 
 ## High-Level Summary
 We developed an API that integrates the georeferencing of Odin Fire to aggregate the community in the generation of fire alert data. The community accesses our system through a chatbot that is easy and practical to use to report possible fires. With it, we can send the user's current location, as well as sending images of the location and describing the fire scenario. However, using a chatbot system today, whether via WhatsApp or Telegram, requires access to the local internet, making it impossible to focus on this routine in rural areas, far from urban centers.  
