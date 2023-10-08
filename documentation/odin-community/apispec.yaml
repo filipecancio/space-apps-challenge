@@ -23,7 +23,24 @@ paths:
       produces:
         - application/json
       description: | 
-        Rota para abertura de relatos de incêndios
+        Route to create reports
+
+        ```bash
+        curl http://localhost:4444/v1/report \
+          --include \
+          --header "Content-Type: application/json" \
+          --request "POST" \
+          --data '{
+            "loc" : {
+              "latitude" : -14.769235,
+              "longitude" : -42.657405
+            },
+            "user": "b6b4d4be-6533-11ee-8c99-0242ac120002",
+            "kind": 1,
+            "cause": [1],
+            "decription": "Foco de incêndio no capinal"
+          }'
+        ```
       parameters: 
         - in: body
           name: body
@@ -48,7 +65,14 @@ paths:
       produces:
         - application/json
       description: | 
-        Rota para abertura de relatos de incêndios
+        Route to list all reports by user
+
+        ``` bash
+        curl http://localhost:4444/v1/user/b6b4d4be-6533-11ee-8c99-0242ac120002/report \
+          --header "Content-Type: application/json" \
+          --request "GET"   
+
+        ```
       parameters: 
         - name: "user"
           in: "path"
@@ -64,10 +88,34 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: '#/definitions/Report'
+                  $ref: '#/definitions/ReportBack'
         '500':
           description: StatusInternalServerError
           
+  /v1/fire/:
+    get: 
+      produces:
+        - application/json
+      description: | 
+        Route to list fires
+
+        ``` bash
+          curl http://localhost:4444/v1/fire \   
+            --header "Content-Type: application/json" \
+            --request "GET"
+        ```
+      responses:
+        '200':
+          description: StatusOK
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/Fire'
+        '500':
+          description: StatusInternalServerError
           
 definitions:
   Sucess:
@@ -111,6 +159,20 @@ definitions:
       user: 
         type: string
       descreption: 
+        type: string
+      loc:
+        type: object
+        properties: 
+          lat:
+            type: number
+            format: float
+          lng: 
+            type: number
+            format: float
+
+  Fire:
+    properties: 
+      dangerousness:
         type: string
       loc:
         type: object

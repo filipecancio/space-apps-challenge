@@ -29,8 +29,18 @@ var (
 			Cause:       []int64{1},
 			Description: "asasa",
 			Loc: Loc{
-				Lat: 0,
-				Lng: 0,
+				Lat: -14.866888,
+				Lng: -40.89066,
+			},
+			Status: 1,
+		}, {
+			User:        "b6b4d4be-6533-11ee-8c99-0242ac120002",
+			Kind:        3,
+			Cause:       []int64{1, 3},
+			Description: "asasa",
+			Loc: Loc{
+				Lat: -14.8322388,
+				Lng: -40.8324066,
 			},
 			Status: 1,
 		},
