@@ -12,10 +12,22 @@ type FireResponse struct {
 
 var (
 	firedb = []Fire{
-		{Loc{}, 1},
-		{Loc{}, 1},
-		{Loc{}, 3},
-		{Loc{}, 2},
+		{Loc{
+			Lat: -14.53322388,
+			Lng: -41.483234066,
+		}, 1},
+		{Loc{
+			Lat: -14.53322388,
+			Lng: -40.483234066,
+		}, 1},
+		{Loc{
+			Lat: -13.53322388,
+			Lng: -40.483234066,
+		}, 3},
+		{Loc{
+			Lat: -14.53322388,
+			Lng: -41.483234066,
+		}, 2},
 	}
 	dangerousnessTranlate = map[int64]string{
 		1: "Periculosidade Media",
